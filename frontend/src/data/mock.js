@@ -94,9 +94,9 @@ export const detailedPricing = {
 };
 
 export const contactInfo = {
-  address: "Trégueux, 22950 Côtes-d'Armor, Bretagne",
-  phone: "02 XX XX XX XX",
-  email: "contact@precycle.fr",
+  address: "Trégueux, Côtes-d'Armor, Bretagne",
+  phone: "06 70 94 48 19",
+  email: "contact.precycle@gmail.com",
   hours: {
     "Lundi - Vendredi": "9h00 - 18h00",
     "Samedi": "9h00 - 17h00",
