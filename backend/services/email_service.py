@@ -47,7 +47,7 @@ class EmailService:
                             <div style="background: white; padding: 15px; border-radius: 6px;">
                                 <h3 style="color: #dc2626; margin-top: 0;">💬 Message :</h3>
                                 <p style="background: #f8f9fa; padding: 10px; border-left: 3px solid #dc2626; margin: 0;">
-                                    {message.replace('\n', '<br>')}
+                                    {message.replace(chr(10), '<br>')}
                                 </p>
                             </div>
                             
