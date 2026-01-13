@@ -36,7 +36,7 @@ export const Services = () => {
                   <CardTitle className="text-2xl font-bold text-white mb-2">
                     {service.title}
                   </CardTitle>
-                  <div className="text-3xl font-bold bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">
+                  <div className="text-3xl font-bold text-red-500">
                     {service.price}
                   </div>
                 </CardHeader>
