@@ -80,7 +80,7 @@ export const Pricing = () => {
                       {items.map((item, index) => (
                         <div key={index} className="flex justify-between items-center p-4 hover:bg-gray-800/30 transition-colors duration-200">
                           <span className="text-gray-300 flex-1">{item.service}</span>
-                          <span className="text-xl font-bold bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent ml-4">
+                          <span className="text-xl font-bold text-red-500 ml-4">
                             {item.price}
                           </span>
                         </div>
