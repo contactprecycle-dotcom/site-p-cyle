@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
 import { contactInfo } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
 import { useToast } from '../hooks/use-toast';
+import axios from 'axios';
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,22 +18,49 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Mock form submission
-    setIsSubmitted(true);
-    toast({
-      title: "Message envoyé !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
-    });
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    setIsLoading(true);
+
+    try {
+      // Send data to backend
+      const response = await axios.post(`${API}/contact`, formData);
+      
+      if (response.data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: "Message envoyé !",
+          description: response.data.message,
+        });
+        
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFormData({ name: '', email: '', message: '' });
+        }, 5000);
+      }
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      
+      let errorMessage = "Erreur lors de l'envoi du message. Veuillez réessayer.";
+      
+      if (error.response?.data?.detail) {
+        errorMessage = error.response.data.detail;
+      } else if (error.message) {
+        errorMessage = `Erreur de connexion: ${error.message}`;
+      }
+      
+      toast({
+        title: "Erreur",
+        description: errorMessage,
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -73,6 +104,7 @@ export const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
+                      disabled={isLoading}
                       className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
                       placeholder="Votre nom"
                     />
@@ -89,6 +121,7 @@ export const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
+                      disabled={isLoading}
                       className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
                       placeholder="votre@email.com"
                     />
@@ -105,6 +138,7 @@ export const Contact = () => {
                       rows={5}
                       value={formData.message}
                       onChange={handleChange}
+                      disabled={isLoading}
                       className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500 resize-none"
                       placeholder="Décrivez votre demande..."
                     />
@@ -112,10 +146,20 @@ export const Contact = () => {
                   
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold py-3 transition-all duration-300 transform hover:scale-105"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-semibold py-3 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Envoyer le message
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 mr-2" />
+                        Envoyer le message
+                      </>
+                    )}
                   </Button>
                 </form>
               ) : (
@@ -154,7 +198,12 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-2">Téléphone</h3>
-                    <p className="text-gray-300">{contactInfo.phone}</p>
+                    <a 
+                      href={`tel:${contactInfo.phone}`}
+                      className="text-gray-300 hover:text-red-400 transition-colors duration-300"
+                    >
+                      {contactInfo.phone}
+                    </a>
                   </div>
                 </div>
               </CardContent>
@@ -169,7 +218,12 @@ export const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-white font-semibold mb-2">Email</h3>
-                    <p className="text-gray-300">{contactInfo.email}</p>
+                    <a 
+                      href={`mailto:${contactInfo.email}`}
+                      className="text-gray-300 hover:text-red-400 transition-colors duration-300"
+                    >
+                      {contactInfo.email}
+                    </a>
                   </div>
                 </div>
               </CardContent>
