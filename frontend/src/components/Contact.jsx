@@ -74,9 +74,9 @@ export const Contact = () => {
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6">
             <span className="text-white">Nous </span>
-            <span className="bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">Contacter</span>
+            <span className="bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">Contacter</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Une question ? Un devis ? N'hésitez pas à nous contacter !
