@@ -21,11 +21,6 @@ const categoryNames = {
 export const Pricing = () => {
   const [activeTab, setActiveTab] = useState('transmission');
 
-  const handleDownloadPDF = () => {
-    // Mock PDF download - in real implementation, this would trigger actual PDF download
-    alert('Téléchargement de la grille tarifaire (fonctionnalité à implémenter avec le backend)');
-  };
-
   return (
     <section id="pricing" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="container mx-auto px-4">
