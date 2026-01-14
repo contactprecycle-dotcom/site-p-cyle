@@ -21,12 +21,6 @@ export const Header = () => {
               alt={logo.alt}
               className="h-10 w-auto"
             />
-            <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">
-                PRECYCLE
-              </h1>
-              <p className="text-xs text-gray-400">L'atelier vélo à Trégueux</p>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
