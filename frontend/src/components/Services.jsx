@@ -14,9 +14,9 @@ export const Services = () => {
     <section id="services" className="py-20 bg-gradient-to-b from-black to-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6">
             <span className="text-white">Nos </span>
-            <span className="bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">Prestations</span>
+            <span className="bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">Prestations</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Découvrez nos forfaits adaptés à tous vos besoins d'entretien et de réparation
