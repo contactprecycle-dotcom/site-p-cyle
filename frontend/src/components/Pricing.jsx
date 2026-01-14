@@ -38,14 +38,6 @@ export const Pricing = () => {
             Découvrez nos tarifs transparents pour tous les services de réparation et d'entretien
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mb-8 rounded-full"></div>
-          
-          <button
-            onClick={handleDownloadPDF}
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-3 rounded-lg hover:from-red-500 hover:to-red-400 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg hover:shadow-red-500/25"
-          >
-            <Download className="w-5 h-5" />
-            <span>Télécharger la grille tarifaire complète (PDF)</span>
-          </button>
         </div>
 
         <div className="max-w-6xl mx-auto">
