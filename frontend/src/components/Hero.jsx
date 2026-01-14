@@ -26,9 +26,9 @@ export const Hero = () => {
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-red-600/20 to-red-500/20 backdrop-blur-sm rounded-full border border-red-500/30 mb-6">
             <Wrench className="w-10 h-10 text-red-400" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight">
             <span className="text-white">PRE</span>
-            <span className="bg-gradient-to-r from-red-500 to-white bg-clip-text text-transparent">CYCLE</span>
+            <span className="bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">CYCLE</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
             L'atelier vélo à Trégueux
