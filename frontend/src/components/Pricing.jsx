@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Download, Cog, Disc, StopCircle, Wrench } from 'lucide-react';
+import { Cog, Disc, StopCircle, Wrench } from 'lucide-react';
 import { detailedPricing } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
