@@ -24,7 +24,7 @@ export const About = () => {
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
                 Nous vous garantissons un service de proximité, rapide et de qualité. 
-                Notre expertise couvre tous types de vélos : VTC, VTT, vélos de route, vélos électriques et vélos urbains.
+                Notre expertise couvre tous types de vélos : VTC, VTT, vélos de route et vélos urbains.
               </p>
             </div>
 
