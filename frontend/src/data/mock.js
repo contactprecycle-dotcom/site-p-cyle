@@ -36,7 +36,6 @@ export const services = [
     description: "Services complémentaires pour votre vélo",
     icon: "plus-circle",
     features: [
-      "Mise à jour VAE + diagnostic",
       "Gros lavage de vélo",
       "Montage accessoires"
     ]
