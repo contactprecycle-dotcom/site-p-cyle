@@ -41,7 +41,7 @@ export const Contact = () => {
         // Reset form after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
-          setFormData({ name: '', email: '', message: '' });
+          setFormData({ name: '', email: '', phone: '', city: '', message: '' });
         }, 5000);
       }
     } catch (error) {
