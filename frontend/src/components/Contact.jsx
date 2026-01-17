@@ -128,6 +128,42 @@ export const Contact = () => {
                       placeholder="votre@email.com"
                     />
                   </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="phone" className="block text-white mb-2 font-medium">
+                        Téléphone *
+                      </label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                        placeholder="06 XX XX XX XX"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="city" className="block text-white mb-2 font-medium">
+                        Ville *
+                      </label>
+                      <Input
+                        id="city"
+                        name="city"
+                        type="text"
+                        required
+                        value={formData.city}
+                        onChange={handleChange}
+                        disabled={isLoading}
+                        className="bg-gray-800/50 border-gray-700 text-white placeholder-gray-400 focus:border-red-500 focus:ring-red-500"
+                        placeholder="Votre ville"
+                      />
+                    </div>
+                  </div>
                   
                   <div>
                     <label htmlFor="message" className="block text-white mb-2 font-medium">
