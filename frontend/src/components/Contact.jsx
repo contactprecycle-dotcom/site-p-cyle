@@ -15,6 +15,8 @@ export const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
+    city: '',
     message: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
