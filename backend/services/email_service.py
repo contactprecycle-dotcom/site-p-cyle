@@ -16,7 +16,7 @@ class EmailService:
         self.email_from = os.environ.get('EMAIL_FROM')
         self.email_to = os.environ.get('EMAIL_TO')
     
-    async def send_contact_email(self, name: str, email: str, message: str) -> bool:
+    async def send_contact_email(self, name: str, email: str, phone: str, city: str, message: str) -> bool:
         """Send contact form email to Precycle"""
         try:
             # Create message
