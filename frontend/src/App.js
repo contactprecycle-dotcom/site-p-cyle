@@ -36,6 +36,7 @@ const Home = () => {
       <Services />
       <Pricing />
       <About />
+      <Gallery />
       <Contact />
       <Footer />
       <Toaster />
