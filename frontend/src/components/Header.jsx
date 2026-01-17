@@ -101,6 +101,12 @@ export const Header = () => {
                 À propos
               </button>
               <button 
+                onClick={() => scrollToSection('gallery')}
+                className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
+              >
+                Galerie
+              </button>
+              <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-2 rounded-lg hover:from-red-500 to-red-400 transition-all duration-300 transform hover:scale-105 font-medium w-fit"
               >
