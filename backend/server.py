@@ -73,6 +73,8 @@ async def submit_contact_form(contact: ContactForm):
         email_sent = await email_service.send_contact_email(
             name=contact.name,
             email=contact.email,
+            phone=contact.phone,
+            city=contact.city,
             message=contact.message
         )
         
