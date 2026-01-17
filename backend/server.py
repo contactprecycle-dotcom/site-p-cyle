@@ -88,6 +88,8 @@ async def submit_contact_form(contact: ContactForm):
         contact_record = {
             "name": contact.name,
             "email": contact.email,
+            "phone": contact.phone,
+            "city": contact.city,
             "message": contact.message,
             "timestamp": datetime.utcnow(),
             "status": "sent"
