@@ -70,6 +70,8 @@ PRECYCLE - Nouveau message de contact
 Détails du contact :
 - Nom : {name}
 - Email : {email}
+- Téléphone : {phone}
+- Ville : {city}
 
 Message :
 {message}
