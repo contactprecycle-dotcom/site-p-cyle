@@ -52,9 +52,6 @@ export const Services = () => {
                       </li>
                     ))}
                   </ul>
-                  <button className="w-full mt-6 bg-gradient-to-r from-red-600/80 to-red-500/80 text-white py-3 rounded-lg hover:from-red-600 hover:to-red-500 transition-all duration-300 transform hover:scale-105 font-semibold">
-                    Choisir ce forfait
-                  </button>
                 </CardContent>
               </Card>
             );
