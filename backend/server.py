@@ -38,6 +38,8 @@ class StatusCheckCreate(BaseModel):
 class ContactForm(BaseModel):
     name: str = Field(..., min_length=2, max_length=100)
     email: EmailStr
+    phone: str = Field(..., min_length=10, max_length=20)
+    city: str = Field(..., min_length=2, max_length=100)
     message: str = Field(..., min_length=10, max_length=1000)
 
 class ContactResponse(BaseModel):
