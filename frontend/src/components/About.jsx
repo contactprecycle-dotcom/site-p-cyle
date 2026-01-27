@@ -86,26 +86,21 @@ export const About = () => {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4">
               <img
-                src={workshopImages[0].url}
-                alt={workshopImages[0].alt}
+                src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/8i6mpqai_IMG_8182.PNG"
+                alt="Atelier Precycle - Mécanicien au travail"
                 className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
               />
               <img
-                src={professionalImages[1].url}
-                alt={professionalImages[1].alt}
+                src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/tnisox5p_IMG_8181.PNG"
+                alt="Atelier Precycle - Vélo en réparation"
                 className="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
               />
             </div>
             <div className="space-y-4 pt-8">
               <img
-                src={workshopImages[1].url}
-                alt={workshopImages[1].alt}
-                className="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
-              />
-              <img
-                src={professionalImages[2].url}
-                alt={professionalImages[2].alt}
-                className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
+                src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/86yy7338_IMG_8181.PNG"
+                alt="Atelier Precycle - Espace de travail"
+                className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
               />
             </div>
           </div>
