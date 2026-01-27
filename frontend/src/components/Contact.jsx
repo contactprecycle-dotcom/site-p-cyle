@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle, Loader2 } from 'lucide-react';
+import React from 'react';
+import { MapPin, Phone, Mail, Clock, Instagram } from 'lucide-react';
 import { contactInfo } from '../data/mock';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Button } from './ui/button';
-import { useToast } from '../hooks/use-toast';
-import axios from 'axios';
+import { Card, CardContent } from './ui/card';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
