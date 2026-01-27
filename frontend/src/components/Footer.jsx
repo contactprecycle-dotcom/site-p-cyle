@@ -38,9 +38,11 @@ export const Footer = () => {
                 <Facebook className="w-4 h-4 text-gray-300 hover:text-white" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/precycle22/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
-                aria-label="Instagram"
+                aria-label="Instagram Precycle"
               >
                 <Instagram className="w-4 h-4 text-gray-300 hover:text-white" />
               </a>
