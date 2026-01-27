@@ -12,8 +12,8 @@ export const Hero = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={professionalImages[0].url}
-          alt={professionalImages[0].alt}
+          src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/wacgsfxj_fond%20d%27accueil.png"
+          alt="Fond d'accueil Precycle"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/80"></div>
