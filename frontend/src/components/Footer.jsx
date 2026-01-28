@@ -63,6 +63,14 @@ export const Footer = () => {
               </li>
               <li>
                 <button 
+                  onClick={() => scrollToSection('about')}
+                  className="text-gray-400 hover:text-red-400 transition-colors duration-300 text-sm"
+                >
+                  À propos
+                </button>
+              </li>
+              <li>
+                <button 
                   onClick={() => scrollToSection('services')}
                   className="text-gray-400 hover:text-red-400 transition-colors duration-300 text-sm"
                 >
@@ -75,14 +83,6 @@ export const Footer = () => {
                   className="text-gray-400 hover:text-red-400 transition-colors duration-300 text-sm"
                 >
                   Tarifs
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-red-400 transition-colors duration-300 text-sm"
-                >
-                  À propos
                 </button>
               </li>
               <li>
