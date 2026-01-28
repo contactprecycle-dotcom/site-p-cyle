@@ -32,9 +32,9 @@ const Home = () => {
     <div className="min-h-screen bg-black">
       <Header />
       <Hero />
+      <About />
       <Services />
       <Pricing />
-      <About />
       <Contact />
       <Footer />
       <Toaster />
