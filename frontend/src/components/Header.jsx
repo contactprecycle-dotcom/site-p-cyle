@@ -77,6 +77,12 @@ export const Header = () => {
                 Accueil
               </button>
               <button 
+                onClick={() => scrollToSection('about')}
+                className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
+              >
+                À propos
+              </button>
+              <button 
                 onClick={() => scrollToSection('services')}
                 className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
               >
@@ -87,12 +93,6 @@ export const Header = () => {
                 className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
               >
                 Tarifs
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
-              >
-                À propos
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
