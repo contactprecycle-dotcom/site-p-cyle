@@ -93,6 +93,7 @@ async def submit_contact_form(contact: ContactForm):
         # Store in database (optional - for tracking)
         contact_record = {
             "name": contact.name,
+            "firstName": contact.firstName,
             "email": contact.email,
             "phone": contact.phone,
             "city": contact.city,
