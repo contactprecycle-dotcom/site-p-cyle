@@ -68,7 +68,7 @@ class EmailService:
 PRECYCLE - Nouveau message de contact
 
 Détails du contact :
-- Nom : {name}
+- Nom : {firstName} {name}
 - Email : {email}
 - Téléphone : {phone}
 - Ville : {city}
