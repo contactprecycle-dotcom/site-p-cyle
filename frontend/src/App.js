@@ -10,7 +10,6 @@ import { Pricing } from "./components/Pricing";
 import { WhoAmI } from "./components/WhoAmI";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { Toaster } from "./components/ui/sonner";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
