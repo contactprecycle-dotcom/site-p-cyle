@@ -36,6 +36,7 @@ const Home = () => {
       <About />
       <Services />
       <Pricing />
+      <WhoAmI />
       <Contact />
       <Footer />
       <Toaster />
