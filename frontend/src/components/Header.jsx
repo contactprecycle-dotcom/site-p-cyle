@@ -101,6 +101,12 @@ export const Header = () => {
                 Tarifs
               </button>
               <button 
+                onClick={() => scrollToSection('whoami')}
+                className="text-white hover:text-red-400 transition-colors duration-300 font-medium text-left"
+              >
+                Qui suis-je
+              </button>
+              <button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-2 rounded-lg hover:from-red-500 to-red-400 transition-all duration-300 transform hover:scale-105 font-medium w-fit"
               >
