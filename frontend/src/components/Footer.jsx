@@ -19,12 +19,6 @@ export const Footer = () => {
                 alt={logo.alt}
                 className="h-8 w-auto"
               />
-              <div>
-                <h3 className="text-lg font-bold bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">
-                  PRECYCLE
-                </h3>
-                <p className="text-xs text-gray-400">L'atelier vélo à Trégueux</p>
-              </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Votre atelier de confiance pour l'entretien et la réparation de tous types de vélos à Trégueux.
