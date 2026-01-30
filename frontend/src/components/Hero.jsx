@@ -14,10 +14,10 @@ export const Hero = () => {
         <img
           src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/wacgsfxj_fond%20d%27accueil.png"
           alt="Fond d'accueil Precycle"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover brightness-125"
         />
-        <div className="absolute inset-0 bg-black/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-red-900/20"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-red-900/10"></div>
       </div>
 
       {/* Content */}
