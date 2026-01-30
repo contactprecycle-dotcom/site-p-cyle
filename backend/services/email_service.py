@@ -40,7 +40,7 @@ class EmailService:
                             <h2 style="color: #dc2626; margin-top: 0;">Détails du contact</h2>
                             
                             <div style="background: white; padding: 15px; border-radius: 6px; margin-bottom: 15px;">
-                                <p><strong>👤 Nom :</strong> {name}</p>
+                                <p><strong>👤 Nom :</strong> {firstName} {name}</p>
                                 <p><strong>📧 Email :</strong> {email}</p>
                                 <p><strong>📞 Téléphone :</strong> {phone}</p>
                                 <p><strong>🏙️ Ville :</strong> {city}</p>
