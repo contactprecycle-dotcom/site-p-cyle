@@ -5,7 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { Button } from './ui/button';
-import { useToast } from '../hooks/use-toast';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
@@ -22,11 +21,14 @@ export const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMessage('');
+    setSuccessMessage('');
 
     try {
       // Send data to backend
@@ -34,33 +36,27 @@ export const Contact = () => {
       
       if (response.data.success) {
         setIsSubmitted(true);
-        toast({
-          title: "Message envoyé !",
-          description: response.data.message,
-        });
+        setSuccessMessage(response.data.message);
         
         // Reset form after 5 seconds
         setTimeout(() => {
           setIsSubmitted(false);
           setFormData({ name: '', firstName: '', city: '', email: '', phone: '', message: '' });
+          setSuccessMessage('');
         }, 5000);
       }
     } catch (error) {
       console.error('Error sending contact form:', error);
       
-      let errorMessage = "Erreur lors de l'envoi du message. Veuillez réessayer.";
+      let errorMsg = "Erreur lors de l'envoi du message. Veuillez réessayer.";
       
       if (error.response?.data?.detail) {
-        errorMessage = error.response.data.detail;
+        errorMsg = error.response.data.detail;
       } else if (error.message) {
-        errorMessage = `Erreur de connexion: ${error.message}`;
+        errorMsg = `Erreur de connexion: ${error.message}`;
       }
       
-      toast({
-        title: "Erreur",
-        description: errorMessage,
-        variant: "destructive"
-      });
+      setErrorMessage(errorMsg);
     } finally {
       setIsLoading(false);
     }
@@ -123,6 +119,18 @@ export const Contact = () => {
               <CardTitle className="text-2xl font-bold text-white">Envoyez-nous un message</CardTitle>
             </CardHeader>
             <CardContent>
+              {/* Success/Error Messages */}
+              {successMessage && (
+                <div className="mb-4 p-4 bg-green-600/20 border border-green-500/50 rounded-lg">
+                  <p className="text-green-400 text-sm">{successMessage}</p>
+                </div>
+              )}
+              {errorMessage && (
+                <div className="mb-4 p-4 bg-red-600/20 border border-red-500/50 rounded-lg">
+                  <p className="text-red-400 text-sm">{errorMessage}</p>
+                </div>
+              )}
+
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
