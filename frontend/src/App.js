@@ -38,7 +38,6 @@ const Home = () => {
       <WhoAmI />
       <Contact />
       <Footer />
-      <Toaster />
     </div>
   );
 };
