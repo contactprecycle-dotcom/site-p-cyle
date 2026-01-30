@@ -21,7 +21,7 @@ class EmailService:
         try:
             # Create message
             msg = MIMEMultipart('alternative')
-            msg['Subject'] = f'Nouveau message de contact - {name}'
+            msg['Subject'] = f'Nouveau message de contact - {firstName} {name}'
             msg['From'] = self.email_from
             msg['To'] = self.email_to
             
