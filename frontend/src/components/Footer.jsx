@@ -84,7 +84,7 @@ export const Footer = () => {
                   onClick={() => scrollToSection('whoami')}
                   className="text-gray-400 hover:text-red-400 transition-colors duration-300 text-sm"
                 >
-                  Qui suis-je
+                  Présentation
                 </button>
               </li>
               <li>
