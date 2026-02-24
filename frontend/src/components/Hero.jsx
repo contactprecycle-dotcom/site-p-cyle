@@ -2,10 +2,6 @@ import React from 'react';
 import { ChevronDown } from 'lucide-react';
 
 export const Hero = () => {
-  const scrollToServices = () => {
-    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
