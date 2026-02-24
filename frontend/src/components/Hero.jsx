@@ -45,7 +45,7 @@ export const Hero = () => {
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
           <button
-            onClick={scrollToServices}
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             className="text-white hover:text-red-400 transition-colors duration-300"
           >
             <ChevronDown size={32} />
