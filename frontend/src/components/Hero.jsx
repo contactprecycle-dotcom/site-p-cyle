@@ -22,6 +22,9 @@ export const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        {/* Spacer to push content down */}
+        <div style={{ height: '200px' }}></div>
+
         <div className="mb-12 max-w-2xl mx-auto">
           <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8">
             Precycle est un atelier dédié à l'entretien, la réparation et la remise en état de vos vélos. 
@@ -31,7 +34,7 @@ export const Hero = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
           <button
-            onClick={scrollToServices}
+            onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-gradient-to-r from-red-600 to-red-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-red-500 hover:to-red-400 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25"
           >
             Voir nos prestations
