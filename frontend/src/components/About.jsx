@@ -90,9 +90,14 @@ export const About = () => {
             </div>
             <div className="space-y-4 pt-8">
               <img
+                src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/2l16wft9_IMG_8102.jpeg"
+                alt="Atelier Precycle - Laurent en action"
+                className="w-full h-48 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
+              />
+              <img
                 src="https://customer-assets.emergentagent.com/job_cycle-repair/artifacts/86yy7338_IMG_8181.PNG"
                 alt="Atelier Precycle - Vélo en réparation"
-                className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
+                className="w-full h-32 object-cover rounded-lg shadow-lg hover:shadow-red-500/20 transition-all duration-300 transform hover:scale-105"
               />
             </div>
           </div>
