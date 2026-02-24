@@ -7,8 +7,7 @@ export const WhoAmI = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
-            <span className="text-white">Qui </span>
-            <span className="bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">suis-je</span>
+            <span className="bg-gradient-to-r from-white to-red-500 bg-clip-text text-transparent">Présentation</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-red-600 to-red-400 mx-auto mt-6 rounded-full"></div>
         </div>
