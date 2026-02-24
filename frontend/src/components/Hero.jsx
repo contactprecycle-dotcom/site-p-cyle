@@ -1,6 +1,5 @@
 import React from 'react';
-import { ChevronDown, Wrench } from 'lucide-react';
-import { professionalImages } from '../data/mock';
+import { ChevronDown } from 'lucide-react';
 
 export const Hero = () => {
   const scrollToServices = () => {
