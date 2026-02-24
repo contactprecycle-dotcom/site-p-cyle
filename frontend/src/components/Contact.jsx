@@ -609,7 +609,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Reviews */}
+            {/* Customer Reviews */}
             <div style={{
               background: 'rgba(17, 24, 39, 0.5)',
               border: '1px solid #374151',
@@ -623,35 +623,35 @@ export const Contact = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                 <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Marie L.</span>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Eric Wagner</span>
                     <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
                   </div>
                   <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>
-                    "Ponctuel, très pro et très gentil ! Laurent a réparé mon VTC en un temps record."
+                    "Super travail de Laurent. Il est venu en temps et en heure à notre maison de vacances pour réparer un pneu crevé. Le travail s'est fait en un rien de temps et il en a profité pour régler le dérailleur arrière du vélo et a gonflé les pneus du deuxième vélo. Tout est parfait. N'hésitez pas une seconde pour faire appel à Laurent - PRECYCLE."
                   </p>
-                  <span style={{ color: '#6b7280', fontSize: '11px' }}>Il y a 2 semaines</span>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
                 </div>
 
                 <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Thomas D.</span>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>edgard reux (Gared)</span>
                     <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
                   </div>
                   <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>
-                    "Service impeccable ! Réparation à domicile très pratique. Je recommande vivement."
+                    "Réparation de mon vélo à domicile sur Langueux. Réparation de qualité et énormément de conseils de sa part. Je recommande."
                   </p>
-                  <span style={{ color: '#6b7280', fontSize: '11px' }}>Il y a 1 mois</span>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 8 mois</span>
                 </div>
 
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Claire M.</span>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Sébastien EZANIC</span>
                     <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
                   </div>
                   <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>
-                    "Laurent est passionné et ça se sent. Mon vélo n'a jamais été aussi bien réglé !"
+                    "Grand professionnel, très pointu sur les vélos haut de gamme. Confiance absolue."
                   </p>
-                  <span style={{ color: '#6b7280', fontSize: '11px' }}>Il y a 3 semaines</span>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
                 </div>
               </div>
             </div>
