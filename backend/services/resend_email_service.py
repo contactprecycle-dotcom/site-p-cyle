@@ -7,14 +7,26 @@ logger = logging.getLogger(__name__)
 
 class ResendEmailService:
     def __init__(self):
+        self._initialized = False
+        self.api_key = None
+        self.from_email = None
+        self.to_email = None
+
+    def _ensure_initialized(self):
+        """Lazy initialization to allow dotenv to load first"""
+        if self._initialized:
+            return
+        
         self.api_key = os.environ.get('RESEND_API_KEY')
         if not self.api_key:
             logger.error("RESEND_API_KEY not found in environment variables")
             raise ValueError("RESEND_API_KEY is required")
         
         resend.api_key = self.api_key
-        self.from_email = os.environ.get('FROM_EMAIL', 'contact@precycle.fr')
+        self.from_email = os.environ.get('FROM_EMAIL', 'onboarding@resend.dev')
         self.to_email = os.environ.get('TO_EMAIL', 'contact.precycle@gmail.com')
+        self._initialized = True
+        logger.info("ResendEmailService initialized successfully")
 
     async def send_contact_email(
         self, 
