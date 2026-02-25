@@ -39,6 +39,9 @@ class ResendEmailService:
     ) -> Dict[str, Any]:
         """Send contact form email using Resend"""
         try:
+            # Ensure service is initialized
+            self._ensure_initialized()
+            
             # Create professional HTML email
             html_content = self._create_html_template(name, firstName, email, phone, city, message)
             
