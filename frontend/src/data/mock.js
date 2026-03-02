@@ -4,7 +4,7 @@ export const services = [
   {
     id: 1,
     title: "Forfait Sécurité",
-    price: "49€",
+    price: "45€",
     description: "Contrôle et réglage des serrages et des systèmes de freinage, contrôle des dérailleurs et réglage, plus lubrification de la chaîne, pression des pneus",
     icon: "shield-check",
     features: [
