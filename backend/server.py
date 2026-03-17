@@ -155,10 +155,16 @@ async def get_status_checks():
 app.include_router(api_router)
 
 # CORS middleware
+cors_origins = os.environ.get('CORS_ORIGINS', '*')
+if cors_origins == '*':
+    allowed_origins = ["*"]
+else:
+    allowed_origins = [origin.strip() for origin in cors_origins.split(',')]
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=["*"],  # In production, specify your domain
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
