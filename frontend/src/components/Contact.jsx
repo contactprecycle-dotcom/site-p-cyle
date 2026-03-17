@@ -50,8 +50,24 @@ export const Contact = () => {
       console.error('Error:', error);
       setSubmitStatus('error');
       
-      if (error.response?.data?.detail) {
-        setStatusMessage(error.response.data.detail);
+      // Handle different error formats
+      const detail = error.response?.data?.detail;
+      if (detail) {
+        // If detail is an array (Pydantic validation errors), extract messages
+        if (Array.isArray(detail)) {
+          const messages = detail.map(err => {
+            if (typeof err === 'string') return err;
+            if (err.msg) return err.msg;
+            return 'Erreur de validation';
+          });
+          setStatusMessage(messages.join('. '));
+        } else if (typeof detail === 'string') {
+          setStatusMessage(detail);
+        } else if (typeof detail === 'object' && detail.msg) {
+          setStatusMessage(detail.msg);
+        } else {
+          setStatusMessage('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+        }
       } else {
         setStatusMessage('Erreur lors de l\'envoi du message. Veuillez réessayer.');
       }
