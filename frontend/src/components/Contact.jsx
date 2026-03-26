@@ -115,4 +115,89 @@ export const Contact = () => {
 
               <div style={{ marginBottom: '30px' }}>
                 <label style={{ display: 'block', marginBottom: '8px', fontWeight: '500', color: 'white' }}>Message *</label>
-                <textarea name="Message" value={formData.Message} onChange
+                <textarea name="Message" value={formData.Message} onChange={handleInputChange} required rows="5" placeholder="Décrivez votre demande..." disabled={isSubmitting} style={{ width: '100%', padding: '12px', background: 'rgba(31, 41, 55, 0.5)', border: '1px solid #374151', borderRadius: '8px', color: 'white', fontSize: '16px', outline: 'none', resize: 'none', fontFamily: 'inherit', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = '#ef4444'} onBlur={(e) => e.target.style.borderColor = '#374151'} />
+              </div>
+
+              <button type="submit" disabled={isSubmitting} style={{ width: '100%', padding: '15px', background: isSubmitting ? '#6b7280' : 'linear-gradient(to right, #dc2626, #ef4444)', border: 'none', borderRadius: '8px', color: 'white', fontSize: '16px', fontWeight: '600', cursor: isSubmitting ? 'not-allowed' : 'pointer', transition: 'all 0.3s', transform: 'scale(1)', }} onMouseEnter={(e) => { if (!isSubmitting) { e.target.style.transform = 'scale(1.02)'; e.target.style.background = 'linear-gradient(to right, #b91c1c, #dc2626)'; } }} onMouseLeave={(e) => { if (!isSubmitting) { e.target.style.transform = 'scale(1)'; e.target.style.background = 'linear-gradient(to right, #dc2626, #ef4444)'; } }}>
+                {isSubmitting ? '⏳ Envoi en cours...' : '📧 Envoyer le message'}
+              </button>
+            </form>
+          </div>
+
+          {/* Informations à droite */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
+            <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '30px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+              <button onClick={openInstagram} style={{ width: '100%', padding: '15px', background: 'linear-gradient(to right, #dc2626, #ef4444)', border: 'none', borderRadius: '8px', color: 'white', fontSize: '18px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }} onMouseEnter={(e) => { e.target.style.transform = 'scale(1.02)'; e.target.style.background = 'linear-gradient(to right, #b91c1c, #dc2626)'; }} onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; e.target.style.background = 'linear-gradient(to right, #dc2626, #ef4444)'; }}>
+                📱 Suivez-nous sur Instagram
+              </button>
+              <p style={{ color: '#9ca3af', marginTop: '15px', fontSize: '16px' }}>@precycle22</p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>📍</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Adresse</h4>
+                <p style={{ color: '#d1d5db', fontSize: '12px' }}>Trégueux, Côtes-d&apos;Armor, Bretagne</p>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>📞</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Téléphone</h4>
+                <a href="tel:0670944819" style={{ color: '#d1d5db', fontSize: '12px', textDecoration: 'none', transition: 'color 0.3s' }} onMouseEnter={(e) => e.target.style.color = '#ef4444'} onMouseLeave={(e) => e.target.style.color = '#d1d5db'}>06 70 94 48 19</a>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>✉️</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Email</h4>
+                <a href="mailto:contact.precycle@gmail.com" style={{ color: '#d1d5db', fontSize: '12px', textDecoration: 'none', transition: 'color 0.3s' }} onMouseEnter={(e) => e.target.style.color = '#ef4444'} onMouseLeave={(e) => e.target.style.color = '#d1d5db'}>contact.precycle@gmail.com</a>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>🕐</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '12px', fontSize: '14px' }}>Horaires</h4>
+                <div style={{ fontSize: '11px', lineHeight: '1.4' }}>
+                  <div style={{ color: '#d1d5db' }}>Lundi - Vendredi</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 18h00</div>
+                  <div style={{ color: '#d1d5db', marginTop: '8px' }}>Samedi</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 17h00</div>
+                  <div style={{ color: '#d1d5db', marginTop: '8px' }}>Dimanche</div>
+                  <div style={{ color: '#9ca3af' }}>Fermé</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '30px', backdropFilter: 'blur(12px)' }}>
+              <h4 style={{ color: 'white', fontWeight: 'bold', fontSize: '20px', textAlign: 'center', marginBottom: '25px' }}>Avis clients</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Eric Wagner</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Super travail de Laurent. Il est venu en temps et en heure à notre maison de vacances pour réparer un pneu crevé. Le travail s&apos;est fait en un rien de temps et il en a profité pour régler le dérailleur arrière du vélo et a gonflé les pneus du deuxième vélo. Tout est parfait. N&apos;hésitez pas une seconde pour faire appel à Laurent - PRECYCLE.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
+                </div>
+                <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>edgard reux (Gared)</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Réparation de mon vélo à domicile sur Langueux. Réparation de qualité et énormément de conseils de sa part. Je recommande.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 8 mois</span>
+                </div>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Sébastien EZANIC</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Grand professionnel, très pointu sur les vélos haut de gamme. Confiance absolue.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
