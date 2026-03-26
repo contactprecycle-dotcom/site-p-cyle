@@ -14,7 +14,6 @@ export const Contact = () => {
   const [submitStatus, setSubmitStatus] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
 
-  // Ton lien Formspree est bien là :
   const FORMSPREE_URL = "https://formspree.io/f/maqlybpo";
 
   const handleInputChange = (e) => {
@@ -38,20 +37,20 @@ export const Contact = () => {
       
       if (response.status === 200) {
         setSubmitStatus('success');
-        setStatusMessage('Email envoyé avec succès ! Nous vous répondrons très vite.');
+        setStatusMessage("Email envoyé avec succès ! Nous vous répondrons très vite.");
         setFormData({ name: '', firstName: '', city: '', email: '', phone: '', message: '' });
       }
     } catch (error) {
       console.error('Error:', error);
       setSubmitStatus('error');
-      setStatusMessage('Erreur lors de l\'envoi du message. Veuillez réessayer.');
+      setStatusMessage("Erreur lors de l'envoi du message. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const openInstagram = () => {
-    window.open('https://www.instagram.com/precycle22/', '_blank');
+    window.open("https://www.instagram.com/precycle22/", "_blank");
   };
 
   return (
@@ -62,12 +61,13 @@ export const Contact = () => {
             Nous Contacter
           </h2>
           <p style={{ fontSize: '1.2rem', color: '#d1d5db', maxWidth: '600px', margin: '0 auto 30px', lineHeight: '1.6' }}>
-            Une question ? Un devis ? N'hésitez pas à nous contacter !
+            Une question ? Un devis ? N&apos;hésitez pas à nous contacter !
           </p>
           <div style={{ width: '96px', height: '4px', background: 'linear-gradient(to right, #dc2626, #ef4444)', margin: '0 auto', borderRadius: '2px' }}></div>
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth > 1024 ? '1fr 1fr' : '1fr', gap: '60px' }}>
+          {/* Formulaire à gauche */}
           <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '40px', backdropFilter: 'blur(12px)' }}>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '30px', color: 'white' }}>
               Envoyez-nous un message
@@ -123,6 +123,7 @@ export const Contact = () => {
             </form>
           </div>
 
+          {/* Informations à droite */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
             <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '30px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
               <button onClick={openInstagram} style={{ width: '100%', padding: '15px', background: 'linear-gradient(to right, #dc2626, #ef4444)', border: 'none', borderRadius: '8px', color: 'white', fontSize: '18px', fontWeight: '600', cursor: 'pointer', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }} onMouseEnter={(e) => { e.target.style.transform = 'scale(1.02)'; e.target.style.background = 'linear-gradient(to right, #b91c1c, #dc2626)'; }} onMouseLeave={(e) => { e.target.style.transform = 'scale(1)'; e.target.style.background = 'linear-gradient(to right, #dc2626, #ef4444)'; }}>
@@ -132,4 +133,70 @@ export const Contact = () => {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-              <div style={{ background: 'rgba(17, 24, 39, 0.5
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>📍</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Adresse</h4>
+                <p style={{ color: '#d1d5db', fontSize: '12px' }}>Trégueux, Côtes-d&apos;Armor, Bretagne</p>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>📞</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Téléphone</h4>
+                <a href="tel:0670944819" style={{ color: '#d1d5db', fontSize: '12px', textDecoration: 'none', transition: 'color 0.3s' }} onMouseEnter={(e) => e.target.style.color = '#ef4444'} onMouseLeave={(e) => e.target.style.color = '#d1d5db'}>06 70 94 48 19</a>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>✉️</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Email</h4>
+                <a href="mailto:contact.precycle@gmail.com" style={{ color: '#d1d5db', fontSize: '12px', textDecoration: 'none', transition: 'color 0.3s' }} onMouseEnter={(e) => e.target.style.color = '#ef4444'} onMouseLeave={(e) => e.target.style.color = '#d1d5db'}>contact.precycle@gmail.com</a>
+              </div>
+
+              <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
+                <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>🕐</div>
+                <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '12px', fontSize: '14px' }}>Horaires</h4>
+                <div style={{ fontSize: '11px', lineHeight: '1.4' }}>
+                  <div style={{ color: '#d1d5db' }}>Lundi - Vendredi</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 18h00</div>
+                  <div style={{ color: '#d1d5db', marginTop: '8px' }}>Samedi</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 17h00</div>
+                  <div style={{ color: '#d1d5db', marginTop: '8px' }}>Dimanche</div>
+                  <div style={{ color: '#9ca3af' }}>Fermé</div>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '30px', backdropFilter: 'blur(12px)' }}>
+              <h4 style={{ color: 'white', fontWeight: 'bold', fontSize: '20px', textAlign: 'center', marginBottom: '25px' }}>Avis clients</h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Eric Wagner</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Super travail de Laurent. Il est venu en temps et en heure à notre maison de vacances pour réparer un pneu crevé. Le travail s&apos;est fait en un rien de temps et il en a profité pour régler le dérailleur arrière du vélo et a gonflé les pneus du deuxième vélo. Tout est parfait. N&apos;hésitez pas une seconde pour faire appel à Laurent - PRECYCLE.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
+                </div>
+                <div style={{ borderBottom: '1px solid #374151', paddingBottom: '15px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>edgard reux (Gared)</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Réparation de mon vélo à domicile sur Langueux. Réparation de qualité et énormément de conseils de sa part. Je recommande.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 8 mois</span>
+                </div>
+                <div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                    <span style={{ color: 'white', fontWeight: '600', fontSize: '14px' }}>Sébastien EZANIC</span>
+                    <div style={{ color: '#fbbf24', fontSize: '14px' }}>⭐⭐⭐⭐⭐</div>
+                  </div>
+                  <p style={{ color: '#d1d5db', fontSize: '13px', marginBottom: '8px', fontStyle: 'italic' }}>&quot;Grand professionnel, très pointu sur les vélos haut de gamme. Confiance absolue.&quot;</p>
+                  <span style={{ color: '#6b7280', fontSize: '11px' }}>il y a 4 mois</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
