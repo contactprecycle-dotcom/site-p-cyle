@@ -137,7 +137,7 @@ export const Contact = () => {
               <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
                 <div style={{ width: '40px', height: '40px', background: 'linear-gradient(to right, rgba(220, 38, 38, 0.2), rgba(239, 68, 68, 0.2))', border: '1px solid rgba(239, 68, 68, 0.3)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px', fontSize: '20px' }}>📍</div>
                 <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>Adresse</h4>
-                <p style={{ color: '#d1d5db', fontSize: '12px' }}>Trégueux, Côtes-d&apos;Armor, Bretagne</p>
+                <p style={{ color: '#d1d5db', fontSize: '12px' }}>Gausson, Côtes-d&apos;Armor, Bretagne</p>
               </div>
 
               <div style={{ background: 'rgba(17, 24, 39, 0.5)', border: '1px solid #374151', borderRadius: '12px', padding: '20px', textAlign: 'center', backdropFilter: 'blur(12px)' }}>
