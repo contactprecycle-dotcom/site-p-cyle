@@ -12,7 +12,7 @@ export const About = () => {
             <div className="space-y-6">
               <p className="text-xl text-gray-300 leading-relaxed">
                 Precycle est né de la passion du vélo et de l'envie de promouvoir une mobilité durable. 
-                Situé à Trégueux, notre atelier est ouvert à tous les cyclistes, du loisir au sportif confirmé.
+                Situé à Gausson, notre atelier est ouvert à tous les cyclistes, du loisir au sportif confirmé.
               </p>
               <p className="text-lg text-gray-400 leading-relaxed">
                 Nous vous garantissons un service de proximité, rapide et de qualité. 
