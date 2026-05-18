@@ -21,7 +21,7 @@ export const Footer = () => {
               />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Votre atelier de confiance pour l'entretien et la réparation de tous types de vélos à Trégueux.
+              Votre atelier de confiance pour l'entretien et la réparation de tous types de vélos à Gausson.
             </p>
             <div className="flex space-x-4">
               <a 
