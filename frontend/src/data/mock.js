@@ -93,7 +93,7 @@ export const detailedPricing = {
 };
 
 export const contactInfo = {
-  address: "Trégueux, Côtes-d'Armor, Bretagne",
+  address: "Gausson, Côtes-d'Armor, Bretagne",
   phone: "06 70 94 48 19",
   email: "contact.precycle@gmail.com",
   hours: {
