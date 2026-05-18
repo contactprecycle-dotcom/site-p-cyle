@@ -58,7 +58,7 @@ export const About = () => {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-2">Proximité</h3>
-                  <p className="text-gray-400 text-sm">Atelier local à Trégueux</p>
+                  <p className="text-gray-400 text-sm">Atelier local à Gausson</p>
                 </div>
               </div>
             </div>
