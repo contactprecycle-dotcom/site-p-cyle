@@ -157,9 +157,9 @@ export const Contact = () => {
                 <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '12px', fontSize: '14px' }}>Horaires</h4>
                 <div style={{ fontSize: '11px', lineHeight: '1.4' }}>
                   <div style={{ color: '#d1d5db' }}>Lundi - Vendredi</div>
-                  <div style={{ color: '#9ca3af' }}>9h00 - 18h00</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 20h00</div>
                   <div style={{ color: '#d1d5db', marginTop: '8px' }}>Samedi</div>
-                  <div style={{ color: '#9ca3af' }}>9h00 - 17h00</div>
+                  <div style={{ color: '#9ca3af' }}>9h00 - 19h00</div>
                   <div style={{ color: '#d1d5db', marginTop: '8px' }}>Dimanche</div>
                   <div style={{ color: '#9ca3af' }}>Fermé</div>
                 </div>
