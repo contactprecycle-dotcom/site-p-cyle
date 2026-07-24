@@ -90,6 +90,17 @@ export const Pricing = () => {
           >
             Demander un devis
           </button>
+
+          {/* --- DÉBUT DE L'AJOUT DE L'IMAGE --- */}
+          <div className="mt-12 flex justify-center">
+            <img 
+              src="/photo-frais-de-deplacement.jpg" 
+              alt="Atelier Precycle" 
+              className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover"
+            />
+          </div>
+          {/* --- FIN DE L'AJOUT DE L'IMAGE --- */}
+
         </div>
       </div>
     </section>
