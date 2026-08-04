@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cog, Disc, StopCircle, Wrench } from 'lucide-react';
+import { Cog, Disc, StopCircle, Wrench, X } from 'lucide-react';
 import { detailedPricing } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -20,9 +20,11 @@ const categoryNames = {
 
 export const Pricing = () => {
   const [activeTab, setActiveTab] = useState('transmission');
+  // Nouvelle ligne pour gérer l'ouverture de l'image
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   return (
-    <section id="pricing" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section id="pricing" className="py-20 bg-gradient-to-b from-gray-900 to-black relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-light mb-6">
@@ -91,18 +93,40 @@ export const Pricing = () => {
             Demander un devis
           </button>
 
-          {/* --- DÉBUT DE L'AJOUT DE L'IMAGE --- */}
+          {/* --- IMAGE CLICABLE --- */}
           <div className="mt-12 flex justify-center">
             <img 
-              src="/photo-frais-de-deplacement.jpg" 
+              src="/photo-devis.jpg" 
               alt="Atelier Precycle" 
-              className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover"
+              onClick={() => setIsImageOpen(true)}
+              title="Cliquez pour agrandir"
+              className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover cursor-pointer hover:opacity-75 transition-opacity duration-300"
             />
           </div>
-          {/* --- FIN DE L'AJOUT DE L'IMAGE --- */}
 
         </div>
       </div>
+
+      {/* --- POP-UP IMAGE AGRANDIE (MODALE) --- */}
+      {isImageOpen && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out backdrop-blur-sm"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition-colors"
+            onClick={() => setIsImageOpen(false)}
+          >
+            <X className="w-10 h-10" />
+          </button>
+          <img 
+            src="/photo-frais-de-deplacement.jpg" 
+            alt="Atelier Precycle agrandie" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default"
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
     </section>
   );
 };
