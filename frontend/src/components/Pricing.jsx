@@ -99,7 +99,7 @@ export const Pricing = () => {
           <div className="mt-12 flex justify-center relative">
             <div className="group relative cursor-pointer" onClick={() => setIsImageOpen(true)}>
               <img 
-                src="/photo-devis.jpg" 
+                src="/photo-frais-de-deplacement.jpg" 
                 alt="Atelier Precycle" 
                 className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover transition-all duration-300 group-hover:opacity-75"
               />
