@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Cog, Disc, StopCircle, Wrench, X } from 'lucide-react';
+import { Cog, Disc, StopCircle, Wrench } from 'lucide-react';
 import { detailedPricing } from '../data/mock';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
@@ -19,8 +19,10 @@ const categoryNames = {
 };
 
 export const Pricing = () => {
+  // On gère l'onglet actif (votre code d'origine)
   const [activeTab, setActiveTab] = useState('transmission');
-  // Nouvelle ligne pour gérer l'ouverture de l'image
+  
+  // NOUVEAU : On ajoute une mémoire pour savoir si l'image en grand est ouverte
   const [isImageOpen, setIsImageOpen] = useState(false);
 
   return (
@@ -93,38 +95,47 @@ export const Pricing = () => {
             Demander un devis
           </button>
 
-          {/* --- IMAGE CLICABLE --- */}
-          <div className="mt-12 flex justify-center">
-            <img 
-              src="/photo-devis.jpg" 
-              alt="Atelier Precycle" 
-              onClick={() => setIsImageOpen(true)}
-              title="Cliquez pour agrandir"
-              className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover cursor-pointer hover:opacity-75 transition-opacity duration-300"
-            />
+          {/* L'IMAGE CLASSIQUE SUR LA PAGE */}
+          <div className="mt-12 flex justify-center relative">
+            <div className="group relative cursor-pointer" onClick={() => setIsImageOpen(true)}>
+              <img 
+                src="/photo-devis.jpg" 
+                alt="Atelier Precycle" 
+                className="rounded-xl shadow-lg border border-gray-800 max-w-full h-auto w-[600px] object-cover transition-all duration-300 group-hover:opacity-75"
+              />
+              {/* Petit effet visuel pour indiquer qu'on peut cliquer */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="bg-black/70 text-white px-4 py-2 rounded-lg font-medium shadow">
+                  Voir en grand
+                </span>
+              </div>
+            </div>
           </div>
-
+          
         </div>
       </div>
 
-      {/* --- POP-UP IMAGE AGRANDIE (MODALE) --- */}
+      {/* NOUVEAU : LA FENÊTRE MODALE POUR L'IMAGE EN GRAND */}
       {isImageOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out backdrop-blur-sm"
-          onClick={() => setIsImageOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 cursor-zoom-out"
+          onClick={() => setIsImageOpen(false)} // Ferme l'image quand on clique n'importe où
         >
-          <button 
-            className="absolute top-6 right-6 text-gray-400 hover:text-red-500 transition-colors"
-            onClick={() => setIsImageOpen(false)}
-          >
-            <X className="w-10 h-10" />
-          </button>
-          <img 
-            src="/photo-frais-de-deplacement.jpg" 
-            alt="Atelier Precycle agrandie" 
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl cursor-default"
-            onClick={(e) => e.stopPropagation()} 
-          />
+          <div className="relative max-w-5xl w-full h-full flex items-center justify-center">
+            {/* Bouton de fermeture */}
+            <button 
+              className="absolute top-4 right-4 text-white hover:text-red-500 text-4xl p-2 z-50"
+              onClick={() => setIsImageOpen(false)}
+            >
+              &times;
+            </button>
+            {/* L'image en grand */}
+            <img 
+              src="/photo-frais-de-deplacement.jpg" 
+              alt="Atelier Precycle en grand" 
+              className="max-h-[90vh] max-w-full rounded-lg shadow-2xl object-contain border border-gray-700"
+            />
+          </div>
         </div>
       )}
     </section>
